@@ -1,0 +1,49 @@
+.button1 {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 6em;
+  font-weight: bold;
+  width: 9em;
+  height: 3em;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.button1:hover {
+  background-color: #3e8e41;
+}
+.button1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.injectDate
+{
+  font-size: 1.3em;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+}
+
+.eventTable {
+  margin: auto;
+  width: 50%;
+}
+
+.events {
+    border-collapse: collapse;
+    border: 1;
+    &-row {
+        width: 100;
+        text-align: center;
+    }
+    &-head {
+        width: 110;
+    }
+}

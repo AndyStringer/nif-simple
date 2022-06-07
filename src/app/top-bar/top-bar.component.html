@@ -1,0 +1,6 @@
+<div align="center">
+  <img src="assets/images/logo.png" alt="Logo image" class="logo" />
+  <span class="runtime">{{timerService.timer | date: 'HH:mm:ss'}}</span>
+  <button type="button" class="small_button" (click) = "onDownload()">CSV</button>
+  <button type="button" class="small_button" (click) = "timerService.resetTimer()">Reset</button>
+</div>

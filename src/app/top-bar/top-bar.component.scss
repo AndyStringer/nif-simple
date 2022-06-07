@@ -1,0 +1,43 @@
+.logo {
+    vertical-align: top;
+}
+
+.runtime
+{
+  background-color: black;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  width: 6.5em;
+  padding: 0.15em;
+  border-right-width:0;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.small_button
+{
+  display: inline-block;
+  vertical-align: top;
+  padding: 25px 15px;
+  font-size: 2em;
+  font-weight: normal;
+  width: 4em;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-right: 10px;
+}
+.small_button:hover {background-color: #3e8e41}
+.small_button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

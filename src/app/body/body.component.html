@@ -1,0 +1,24 @@
+<div align="center">
+  <button class="button1" (click)="onPress()">
+    {{ timerService.buttonText }}
+  </button>
+</div>
+<p class="injectDate">{{ injectDate }}</p>
+
+
+<div class="eventTable">
+    <table class="events">
+      <tr>
+        <th width="110">Odour Profile</th>
+        <th width="252">Start (mins)</th>
+        <th width="252">End (mins)</th>
+        <th width="252">Duration (mins)</th>
+      </tr>
+      <tr class="events-row">
+        <td colspan="4">
+          <div align="center" id="event"></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+ 
