@@ -10,6 +10,8 @@ export class TimerService {
   buttonPress: number = 0;
   buttonText: string = "Inject";
   injectDate: any = null;
+  start: any = null;
+  stop: any = null;
 
   constructor() {}
 
@@ -32,4 +34,21 @@ export class TimerService {
     this.buttonText = "Inject";
     this.injectDate = null;
   }
+
+  formatD(ms:number)								// format for decimal minutes
+{
+	var d = new Date(ms);
+	var m = d.getMinutes();
+  var s = d.getSeconds();
+  var ms = d.getMilliseconds();
+  // var t = (s + (ms/1000)/60*100).toFixed(2);
+  var t = (ms/1000/60*100).toFixed(2);
+  var ds = parseInt(t)*100;
+
+//  return ds.toString();
+
+//	var ds= parseInt(((d.getSeconds()+d.getMilliseconds()/1000)/60*100).toFixed(2)*100);
+	var formatted = m.toString().padStart(2, "0")+"."+ds.toString().padStart(4, "0").substr(0,3);
+	return formatted;
+}
 }

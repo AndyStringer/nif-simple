@@ -3,4 +3,5 @@ export interface Event {
     strength: number;
     start: string;
     end: string;
+    duration: string
 };

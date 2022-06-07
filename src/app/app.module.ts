@@ -8,7 +8,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { PanelModule } from 'primeng/panel';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
