@@ -1,6 +1,6 @@
 export interface Event {
     odor: string;
     strength: number;
-    start: number;
+    start: string;
     end: string;
 };

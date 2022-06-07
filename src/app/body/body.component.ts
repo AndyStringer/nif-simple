@@ -3,14 +3,17 @@ import { Event } from '../_event';
 import { TimerService } from '../services/timer.service';
 import { States } from '../_constants';
 
-
 @Component({
   selector: 'body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
 })
 export class BodyComponent implements OnInit {
-  Events: Event[] = [];
+  events: Event[] = [
+    { odor: 'Citrus', strength: 3, start: '00.042', end: '00.059' },
+    { odor: 'Woody', strength: 2, start: '00.063', end: '00.069' },
+    { odor: 'Fruity', strength: 4, start: '00.077', end: '00.090' },
+  ];
 
   readonly state = States;
 
