@@ -9,6 +9,7 @@ export class TimerService {
   iTimer: any = null;
   buttonPress: number = 0;
   buttonText: string = "Inject";
+  injectDate: any = null;
 
   constructor() {}
 
@@ -29,5 +30,6 @@ export class TimerService {
     this.timer = new Date(0, 0, 0, 0, 0, 0, 0);
     this.buttonPress = 0;
     this.buttonText = "Inject";
+    this.injectDate = null;
   }
 }

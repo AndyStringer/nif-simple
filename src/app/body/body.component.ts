@@ -12,8 +12,6 @@ import { States } from '../_constants';
 export class BodyComponent implements OnInit {
   Events: Event[] = [];
 
-  injectDate: any = null;
-
   readonly state = States;
 
   constructor(public timerService: TimerService) {}
@@ -24,7 +22,7 @@ export class BodyComponent implements OnInit {
         this.timerService.startTimer();
         this.timerService.buttonText = 'Start';
         this.timerService.buttonPress = this.state.start;
-        this.injectDate = new Date();
+        this.timerService.injectDate = new Date();
         break;
       case this.state.start:
         this.timerService.buttonText = 'Stop';
