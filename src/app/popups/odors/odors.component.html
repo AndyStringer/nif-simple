@@ -1,14 +1,19 @@
+<!--
 <p-overlayPanel [appendTo]="here" styleClass="panel" #op #here>
     <ng-template pTemplate>
       <p-listbox [options]="odors" [(ngModel)]="odor" optionLabel="name" [style]="{'width':'15rem'}" (click)="getOdor($event, here)"></p-listbox>
-  <!--
-      <h3>Choose Odour:</h3>
-        <ul *ngFor="let odor of odors">
-          <input #odorLine type="radio" name="odorSelect" value="{{odor}}" ngModel (click)="get_odor()"/>{{odor}}
-        </ul>
-  -->
     </ng-template>
-  </p-overlayPanel>
-  
-  <button type="text" pButton label="Overlay Panel" (click)="op.toggle($event, here)"></button>
+</p-overlayPanel>
+-->
+
+<p-dialog positions="center" styleClass="panel" [modal]="true" [(visible)]="displayModal">
+    <ng-template pTemplate>
+      <p-listbox [options]="odors" [(ngModel)]="odor" optionLabel="name" [style]="{'width':'15rem'}" (click)="getOdorD()"></p-listbox>
+    </ng-template>
+</p-dialog>
+
+
+<!--
+    <button type="text" pButton label="Odor Panel" (click)="showModalDialog()"></button>
+-->
   

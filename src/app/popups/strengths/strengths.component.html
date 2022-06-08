@@ -1,1 +1,14 @@
-<p>strengths works!</p>
+<p-overlayPanel [appendTo]="there" styleClass="panel" #op #there>
+    <ng-template pTemplate>
+      <p-listbox [options]="strengths" [(ngModel)]="strength" optionLabel="name" [style]="{'width':'15rem'}" (click)="getStrength($event, there)"></p-listbox>
+  <!--
+      <h3>Choose Odour:</h3>
+        <ul *ngFor="let odor of odors">
+          <input #odorLine type="radio" name="odorSelect" value="{{odor}}" ngModel (click)="get_odor()"/>{{odor}}
+        </ul>
+  -->
+    </ng-template>
+  </p-overlayPanel>
+  
+  <button type="text" pButton label="Strength Panel" (click)="op.toggle($event, there)"></button>
+  

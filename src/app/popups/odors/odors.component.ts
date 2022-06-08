@@ -20,6 +20,8 @@ export class OdorsComponent implements OnInit {
 
   odors: oTemplate[] = [];
   odor: string = "";
+  displayModal: boolean = true;
+
 
   constructor(private timerService: TimerService) {
     this.odors = Odors;
@@ -27,11 +29,25 @@ export class OdorsComponent implements OnInit {
 
   getOdor(event: any, element: { hide: (arg0: any) => void; }) {
     this.timerService.selectedOdor = this.odor;
+    this.timerService.events[this.timerService.events.length - 1].odor = this.odor;
     element.hide(event);
-    console.log(this.odor)
+    console.log(this.odor.valueOf());
   }
 
-  ngOnInit(): void {
+  getOdorD() {
+    this.timerService.selectedOdor = JSON.stringify(this.odor).substring(9, JSON.stringify(this.odor).length - 2);
+    this.timerService.events[this.timerService.events.length - 1].odor =  this.timerService.selectedOdor;
+    console.log( this.timerService.selectedOdor );
   }
+
+  showModalDialog() {
+    this.displayModal = true;
+  }
+
+
+  ngOnInit(): void {
+
+  }
+  
 
 }

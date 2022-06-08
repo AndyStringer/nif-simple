@@ -17,18 +17,18 @@ export const Odors = [
     {name: "Other"}
 ];
 
-export const Strengths = {
-    0: "Barely Detected",
-    1: "Weak",
-    2: "Moderate",
-    3: "Strong",
-    4: "Very Strong",
-    5: "Extreme"
-};
+export const Strengths = [
+    {name: "Barely Detected", code: 0},
+    {name: "Weak", code: 1},
+    {name: "Moderate", code: 2},
+    {name: "Strong", code: 3},
+    {name: "Very Strong", code: 4},
+    {name: "Extreme", code: 5}
+];
 
 export interface sTemplate {
-    code: number,
-    name: string
+    name: string,
+    code: number
 }
 
 export const EXCEL_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";

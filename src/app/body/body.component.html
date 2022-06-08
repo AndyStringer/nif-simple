@@ -11,7 +11,7 @@
 
 
 <div class="eventTable">
-<p-table #dt [columns]="cols" [exportFilename]="fileName" [value]="events" styleClass="p-datatable-gridlines" responsiveLayout="scroll" [exportHeader]="'customExportHeader'">
+<p-table #dt [columns]="cols" [exportFilename]="fileName" [value]="timerService.events" styleClass="p-datatable-gridlines" responsiveLayout="scroll" [exportHeader]="'customExportHeader'">
   <ng-template pTemplate="caption">
     <div class="flex">
         <button type="button" pButton pRipple icon="pi pi-file" (click)="dt.exportCSV()" class="mr-2" pTooltip="CSV" tooltipPosition="bottom"></button>
@@ -39,5 +39,9 @@
   </ng-template>
 </p-table>
 </div>
-
-<odors-popup></odors-popup>
+<div [ngClass]="odorPanelVisible ? '': 'vis'">
+  <odors-popup></odors-popup>
+</div>
+<div [ngClass]="strengthPanelVisible ? '': 'vis'">
+  <strengths-popup></strengths-popup>
+</div>

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { SelectItemGroup } from 'primeng/api';
-import { Event } from '../_event';
 import { TimerService } from '../services/timer.service';
 import {
   States,
@@ -11,7 +10,7 @@ import {
   sTemplate,
   EXCEL_EXTENSION,
   EXCEL_TYPE,
-  PDF_EXTENSION,
+  PDF_EXTENSION
 } from '../_constants';
 import { formatDate } from '@angular/common';
 import { Inject } from '@angular/core';
@@ -23,43 +22,23 @@ import { LOCALE_ID } from '@angular/core';
   styleUrls: ['./body.component.scss'],
 })
 export class BodyComponent implements OnInit {
-  events: Event[] = [
-    {
-      odor: 'Citrus',
-      strength: 3,
-      start: '00.042',
-      end: '00.059',
-      duration: '00.027',
-    },
-    {
-      odor: 'Woody',
-      strength: 2,
-      start: '00.063',
-      end: '00.069',
-      duration: '00.006',
-    },
-    {
-      odor: 'Fruity',
-      strength: 4,
-      start: '00.077',
-      end: '00.090',
-      duration: '00.013',
-    },
-  ];
-
+    
   readonly state = States;
   exportColumns: any[] = [];
   cols: any[] = [];
   now = new Date();
   fileName: string = '';
-  duration: number = 0;
+  odorPanelVisible: boolean = false;
+  strengthPanelVisible: boolean = false;
+
 
   constructor(
     @Inject(LOCALE_ID) public localID: string,
     public timerService: TimerService
-  ) {  }
+    ) {  }
 
   onPress() {
+    this.odorPanelVisible = false;
     switch (this.timerService.buttonPress) {
       case this.state.inject:
         this.timerService.startTimer();
@@ -71,24 +50,14 @@ export class BodyComponent implements OnInit {
         this.timerService.start = new Date().getTime();
         this.timerService.buttonText = 'Stop';
         this.timerService.buttonPress = this.state.stop;
-        this.duration = 0;
+        this.timerService.duration = 0;
         break;
       case this.state.stop:
         this.timerService.stop = new Date().getTime();
+        this.odorPanelVisible = true;
         this.timerService.buttonText = 'Start';
         this.timerService.buttonPress = this.state.start;
-        this.duration = this.timerService.stop - this.timerService.start;
-        this.events.push({
-          odor: 'Smelly',
-          strength: 5,
-          start: this.timerService.formatD(
-            this.timerService.start - this.timerService.injectTime
-          ),
-          end: this.timerService.formatD(
-            this.timerService.stop - this.timerService.injectTime
-          ),
-          duration: this.timerService.formatD(this.duration),
-        });
+        this.timerService.duration = this.timerService.stop - this.timerService.start;
         break;
     }
   }
@@ -97,7 +66,7 @@ export class BodyComponent implements OnInit {
     import('jspdf').then((jsPDF) => {
       import('jspdf-autotable').then((x) => {
         const doc = new jsPDF.default('p');
-        (doc as any).autoTable(this.exportColumns, this.events);
+        (doc as any).autoTable(this.exportColumns, this.timerService.events);
         doc.save(this.fileName + PDF_EXTENSION);
       });
     });
@@ -105,13 +74,12 @@ export class BodyComponent implements OnInit {
 
   exportExcel() {
     import('xlsx').then((xlsx) => {
-      const worksheet = xlsx.utils.json_to_sheet(this.events);
+      const worksheet = xlsx.utils.json_to_sheet(this.timerService.events);
       const workbook = xlsx.utils.book_new();
       xlsx.utils.book_append_sheet(workbook, worksheet, 'data');
       xlsx.writeFile(workbook, this.fileName + EXCEL_EXTENSION);
     });
   }
-
 
   ngOnInit(): void {
     this.cols = [

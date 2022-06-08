@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimerService } from '../../services/timer.service';
 import {
   States,
   oTemplate,
@@ -18,9 +19,18 @@ import {
 export class StrengthsComponent implements OnInit {
 
   strengths: sTemplate[] = [];
-  slectedStrength: string = "";
+  strength: string = "";
 
-  constructor() { }
+  constructor(private timerService: TimerService) {
+    this.strengths = Strengths;
+  }
+
+  getStrength(event: any, element: { hide: (arg0: any) => void; }) {
+    this.timerService.selectedOdor = this.strength;
+    element.hide(event);
+    console.log(this.strength)
+  }
+
 
   ngOnInit(): void {
   }
