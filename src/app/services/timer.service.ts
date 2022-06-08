@@ -12,6 +12,8 @@ export class TimerService {
   injectTime: any = null;
   start: any = null;
   stop: any = null;
+  selectedOdor: string = "";
+  selectedStrength: number = 0;
 
   constructor() {}
 
