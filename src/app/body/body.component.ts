@@ -36,7 +36,7 @@ export class BodyComponent implements OnInit {
         this.timerService.startTimer();
         this.timerService.buttonText = 'Start';
         this.timerService.buttonPress = this.state.start;
-        this.timerService.injectDate = new Date();
+        this.timerService.injectTime = new Date().getTime();
         break;
       case this.state.start:
         this.timerService.start = new Date().getTime();
@@ -52,8 +52,8 @@ export class BodyComponent implements OnInit {
         this.events.push({
           odor: 'Smelly',
           strength: 5,
-          start: this.timerService.formatD(this.timerService.start),
-          end: this.timerService.formatD(this.timerService.stop),
+          start: this.timerService.formatD(this.timerService.start - this.timerService.injectTime),
+          end: this.timerService.formatD(this.timerService.stop - this.timerService.injectTime),
           duration: this.timerService.formatD(this.duration)
         });
         break;
@@ -79,6 +79,11 @@ exportExcel() {
     });
 }
 
+display: boolean = false;
+
+showDialog() {
+    this.display = true;
+}
 
   ngOnInit(): void {
     this.cols = [

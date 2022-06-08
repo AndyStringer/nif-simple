@@ -9,7 +9,7 @@ export class TimerService {
   iTimer: any = null;
   buttonPress: number = 0;
   buttonText: string = "Inject";
-  injectDate: any = null;
+  injectTime: any = null;
   start: any = null;
   stop: any = null;
 
@@ -32,7 +32,7 @@ export class TimerService {
     this.timer = new Date(0, 0, 0, 0, 0, 0, 0);
     this.buttonPress = 0;
     this.buttonText = "Inject";
-    this.injectDate = null;
+    this.injectTime = null;
   }
 
   formatD(ms:number)								// format for decimal minutes
@@ -40,14 +40,8 @@ export class TimerService {
 	var d = new Date(ms);
 	var m = d.getMinutes();
   var s = d.getSeconds();
-  var ms = d.getMilliseconds();
-  // var t = (s + (ms/1000)/60*100).toFixed(2);
-  var t = (ms/1000/60*100).toFixed(2);
-  var ds = parseInt(t)*100;
-
-//  return ds.toString();
-
-//	var ds= parseInt(((d.getSeconds()+d.getMilliseconds()/1000)/60*100).toFixed(2)*100);
+  var mx = d.getMilliseconds() / 1000;
+  var ds = parseInt(((s + mx) / 60 * 100).toFixed(2)) * 100;
 	var formatted = m.toString().padStart(2, "0")+"."+ds.toString().padStart(4, "0").substr(0,3);
 	return formatted;
 }

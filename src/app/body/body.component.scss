@@ -1,4 +1,4 @@
-.button1 {
+.big_button {
   display: inline-block;
   padding: 15px 25px;
   font-size: 6em;
@@ -14,10 +14,10 @@
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-.button1:hover {
+.big_button:hover {
   background-color: #3e8e41;
 }
-.button1:active {
+.big_button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
