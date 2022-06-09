@@ -1,9 +1,17 @@
+.button_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+}
+
 .big_button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 6em;
+  padding: 15px 15px;
+  font-size: 5rem;
   font-weight: bold;
-  width: 9em;
+  width: 100%;
   height: 3em;
   text-align: center;
   text-decoration: none;
@@ -11,8 +19,9 @@
   color: #fff;
   background-color: #4caf50;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 9px #999;
+  margin:auto;
 }
 .big_button:hover {
   background-color: #3e8e41;
@@ -24,7 +33,7 @@
 }
 
 .injectDate {
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: bold;
   color: blue;
   text-align: center;
@@ -32,7 +41,7 @@
 
 .eventTable {
   margin: auto;
-  width: 60%;
+  width: 100%;
 }
 
 .events {
@@ -75,7 +84,7 @@
 }
 
 .list {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: bold;
 }
 
