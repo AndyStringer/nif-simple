@@ -47,7 +47,7 @@
   }
 }
 
-:host ::ng-deep .panel.p-overlaypanel {
+:host ::ng-deep .p-dialog {
   display: flexbox;
   border-radius: 0;
   border: 0;
@@ -55,6 +55,22 @@
   background-color: transparent;
   width: 350px;
   padding: 10px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.panel {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  width: 350px;
+  padding: 10px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.list {
   font-size: 2em;
   font-weight: bold;
 }

@@ -4,44 +4,89 @@
   </button>
 </div>
 
-
-
 <p class="injectDate">{{ timerService.injectTime | date: "full" }}</p>
 
-
-
 <div class="eventTable">
-<p-table #dt [columns]="cols" [exportFilename]="fileName" [value]="timerService.events" styleClass="p-datatable-gridlines" responsiveLayout="scroll" [exportHeader]="'customExportHeader'">
-  <ng-template pTemplate="caption">
-    <div class="flex">
-        <button type="button" pButton pRipple icon="pi pi-file" (click)="dt.exportCSV()" class="mr-2" pTooltip="CSV" tooltipPosition="bottom"></button>
-        <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
-        <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
-    </div>
-</ng-template>
-  <ng-template pTemplate="header" class="events-head">
+  <p-table
+    #dt
+    [columns]="cols"
+    [exportFilename]="fileName"
+    [value]="timerService.events"
+    styleClass="p-datatable-gridlines"
+    responsiveLayout="scroll"
+    [exportHeader]="'customExportHeader'"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex">
+        <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-file"
+          (click)="dt.exportCSV()"
+          class="mr-2"
+          pTooltip="CSV"
+          tooltipPosition="bottom"
+        ></button>
+        <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-file-excel"
+          (click)="exportExcel()"
+          class="p-button-success mr-2"
+          pTooltip="XLS"
+          tooltipPosition="bottom"
+        ></button>
+        <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-file-pdf"
+          (click)="exportPdf()"
+          class="p-button-warning mr-2"
+          pTooltip="PDF"
+          tooltipPosition="bottom"
+        ></button>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" class="events-head">
       <tr>
-          <th>Odor Profile</th>
-          <th>Strength</th>
-          <th>Start (mins)</th>
-          <th>End (mins)</th>
-          <th>Duration (mins)</th>
+        <th>Odor Profile</th>
+        <th>Strength</th>
+        <th>Start (mins)</th>
+        <th>End (mins)</th>
+        <th>Duration (mins)</th>
       </tr>
-  </ng-template>
-  <ng-template pTemplate="body" class="events" let-event>
+    </ng-template>
+    <ng-template pTemplate="body" class="events" let-event>
       <tr class="events-row">
-          <td>{{event.odor}}</td>
-          <td>{{event.strength}}</td>
-          <td>{{event.start}}</td>
-          <td>{{event.end}}</td>
-          <td>{{event.duration}}</td>
+        <td>{{ event.odor }}</td>
+        <td>{{ event.strength }}</td>
+        <td>{{ event.start }}</td>
+        <td>{{ event.end }}</td>
+        <td>{{ event.duration }}</td>
       </tr>
-  </ng-template>
-</p-table>
+    </ng-template>
+  </p-table>
 </div>
+<!--
 <div [ngClass]="timerService.odorPanelVisible ? '': 'vis'">
   <odors-popup></odors-popup>
 </div>
 <div [ngClass]="timerService.strengthPanelVisible ? '': 'vis'">
   <strengths-popup></strengths-popup>
 </div>
+-->
+
+  <p-dialog positions="center" [modal]="true" [(visible)]="odorPanelVisible">
+    <ng-template pTemplate>
+      <p-listbox [options]="odors" [(ngModel)]="odor" optionLabel="name" [style]="{ 'width': '15rem', 'font-size': '2em', 'font-weight': 'bold' }" (click)="getOdor()"></p-listbox>
+    </ng-template>
+  </p-dialog>
+
+  <p-dialog positions="center" [style]="{ 'width': '40rem'}" [modal]="true" [(visible)]="strengthPanelVisible">
+    <ng-template pTemplate>
+      <p-listbox [options]="strengths" [(ngModel)]="strength" optionLabel="name" [style]="{ 'width': '35rem', 'font-size': '2em', 'font-weight': 'bold' }" (click)="getStrength()"></p-listbox>
+    </ng-template>
+  </p-dialog>

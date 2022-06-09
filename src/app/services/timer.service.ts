@@ -18,8 +18,6 @@ export class TimerService {
   selectedStrength: string = '';
   valueFromO: boolean = true;
   duration: number = 0;
-  odorPanelVisible: boolean = false;
-  strengthPanelVisible: boolean = false;
 
   readonly state = States;
 

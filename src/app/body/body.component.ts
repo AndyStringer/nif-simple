@@ -28,16 +28,25 @@ export class BodyComponent implements OnInit {
   cols: any[] = [];
   now = new Date();
   fileName: string = '';
+  odorPanelVisible: boolean = false;
+  strengthPanelVisible: boolean = false;
+  odors: oTemplate[] = [];
+  odor: string = "";
+  strengths: sTemplate[] = [];
+  strength: string = "";
 
 
   constructor(
     @Inject(LOCALE_ID) public localID: string,
     public timerService: TimerService
-    ) {  }
+    ) {
+      this.strengths = Strengths;
+      this.odors = Odors;
+      }
 
   onPress() {
-    this.timerService.odorPanelVisible = false;
-    this.timerService.strengthPanelVisible = true;
+    this.odorPanelVisible = false;
+    this.strengthPanelVisible = false;
     switch (this.timerService.buttonPress) {
       case this.state.inject:
         this.timerService.startTimer();
@@ -53,7 +62,7 @@ export class BodyComponent implements OnInit {
         break;
       case this.state.stop:
         this.timerService.stop = new Date().getTime();
-        this.timerService.odorPanelVisible = true;
+        this.odorPanelVisible = true;
         this.timerService.buttonText = 'Start';
         this.timerService.buttonPress = this.state.start;
         this.timerService.duration = this.timerService.stop - this.timerService.start;
@@ -98,5 +107,22 @@ export class BodyComponent implements OnInit {
       '_' +
       this.localID;
   }
+
+  getOdor() {
+    this.timerService.selectedOdor = JSON.stringify(this.odor).substring(9, JSON.stringify(this.odor).length - 2); // nasty hack to get around issue with PrimeNG returning incorrect data
+//    this.timerService.events[this.timerService.events.length - 1].odor =  this.timerService.selectedOdor;
+    this.odorPanelVisible = false;  // turn off Odor selection modal
+    this.strengthPanelVisible = true;  // turn on Strength selection modal
+    this.strengthPanelVisible = true; // turn on Strength selection modal
+//    console.log( this.timerService.selectedOdor );
+  }
+
+  getStrength() {
+    this.timerService.selectedStrength = JSON.stringify(this.strength).substring(9, JSON.stringify(this.strength).indexOf('"',9)); // nasty hack to get around issue with PrimeNG returning incorrect data
+    this.strengthPanelVisible = false;
+    this.timerService.pushEvent();
+//    console.log( JSON.stringify(this.strength) + ' - ' + this.timerService.selectedStrength );
+}
+
 
 }

@@ -12,8 +12,6 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ListboxModule } from 'primeng/listbox';
-import { OdorsComponent } from './popups/odors/odors.component';
-import { StrengthsComponent } from './popups/strengths/strengths.component';
 
 
 
@@ -21,9 +19,7 @@ import { StrengthsComponent } from './popups/strengths/strengths.component';
   declarations: [
     AppComponent,
     TopBarComponent,
-    BodyComponent,
-    OdorsComponent,
-    StrengthsComponent
+    BodyComponent
   ],
   imports: [
     BrowserModule,
