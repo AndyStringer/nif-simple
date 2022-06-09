@@ -39,9 +39,9 @@
   </ng-template>
 </p-table>
 </div>
-<div [ngClass]="odorPanelVisible ? '': 'vis'">
+<div [ngClass]="timerService.odorPanelVisible ? '': 'vis'">
   <odors-popup></odors-popup>
 </div>
-<div [ngClass]="strengthPanelVisible ? '': 'vis'">
+<div [ngClass]="timerService.strengthPanelVisible ? '': 'vis'">
   <strengths-popup></strengths-popup>
 </div>

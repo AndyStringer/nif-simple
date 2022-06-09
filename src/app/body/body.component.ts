@@ -28,8 +28,6 @@ export class BodyComponent implements OnInit {
   cols: any[] = [];
   now = new Date();
   fileName: string = '';
-  odorPanelVisible: boolean = false;
-  strengthPanelVisible: boolean = false;
 
 
   constructor(
@@ -38,7 +36,8 @@ export class BodyComponent implements OnInit {
     ) {  }
 
   onPress() {
-    this.odorPanelVisible = false;
+    this.timerService.odorPanelVisible = false;
+    this.timerService.strengthPanelVisible = true;
     switch (this.timerService.buttonPress) {
       case this.state.inject:
         this.timerService.startTimer();
@@ -54,7 +53,7 @@ export class BodyComponent implements OnInit {
         break;
       case this.state.stop:
         this.timerService.stop = new Date().getTime();
-        this.odorPanelVisible = true;
+        this.timerService.odorPanelVisible = true;
         this.timerService.buttonText = 'Start';
         this.timerService.buttonPress = this.state.start;
         this.timerService.duration = this.timerService.stop - this.timerService.start;

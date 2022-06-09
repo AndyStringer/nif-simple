@@ -35,8 +35,10 @@ export class OdorsComponent implements OnInit {
   }
 
   getOdorD() {
-    this.timerService.selectedOdor = JSON.stringify(this.odor).substring(9, JSON.stringify(this.odor).length - 2);
-    this.timerService.events[this.timerService.events.length - 1].odor =  this.timerService.selectedOdor;
+    this.timerService.selectedOdor = JSON.stringify(this.odor).substring(9, JSON.stringify(this.odor).length - 2); // nasty hack to get around issue with PrimeNG returning incorrect data
+//    this.timerService.events[this.timerService.events.length - 1].odor =  this.timerService.selectedOdor;
+    this.displayModal = false;
+    this.timerService.strengthPanelVisible = true;
     console.log( this.timerService.selectedOdor );
   }
 

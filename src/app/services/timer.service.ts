@@ -15,11 +15,17 @@ export class TimerService {
   start: any = null;
   stop: any = null;
   selectedOdor: string = '';
-  selectedStrength: number = 0;
+  selectedStrength: string = '';
   valueFromO: boolean = true;
   duration: number = 0;
+  odorPanelVisible: boolean = false;
+  strengthPanelVisible: boolean = false;
+
   readonly state = States;
 
+  events: Event[] = [];
+
+  /* Dummy data for testing
   events: Event[] = [
     {
       odor: 'Citrus',
@@ -43,6 +49,7 @@ export class TimerService {
       duration: '00.013',
     },
   ];
+*/
 
   constructor() {}
 
