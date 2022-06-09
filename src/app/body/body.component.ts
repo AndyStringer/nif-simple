@@ -38,6 +38,7 @@ export class BodyComponent implements OnInit {
 
   constructor(
     @Inject(LOCALE_ID) public localID: string,
+    private primengConfig: PrimeNGConfig,
     public timerService: TimerService
     ) {
       this.strengths = Strengths;
@@ -90,6 +91,7 @@ export class BodyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
     this.cols = [
       { field: 'odor', header: 'Odor' },
       { field: 'strength', header: 'Strength' },

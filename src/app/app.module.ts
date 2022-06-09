@@ -12,7 +12,7 @@ import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { ListboxModule } from 'primeng/listbox';
-
+import {TooltipModule} from 'primeng/tooltip';
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import { ListboxModule } from 'primeng/listbox';
     PanelModule,
     TableModule,
     DialogModule,
-    ListboxModule
+    ListboxModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
