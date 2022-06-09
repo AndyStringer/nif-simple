@@ -47,6 +47,10 @@
   }
 }
 
+.icons {
+  text-align: right;
+}
+
 :host ::ng-deep .p-dialog {
   display: flexbox;
   border-radius: 0;
