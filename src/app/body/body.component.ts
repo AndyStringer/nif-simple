@@ -6,6 +6,7 @@ import {
   States,
   oTemplate,
   Odors,
+  OdorsList,
   Strengths,
   sTemplate,
   EXCEL_EXTENSION,
@@ -42,7 +43,7 @@ export class BodyComponent implements OnInit {
     public timerService: TimerService
     ) {
       this.strengths = Strengths;
-      this.odors = Odors;
+      this.odors = OdorsList;
       }
 
   onPress() {

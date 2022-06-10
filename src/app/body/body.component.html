@@ -81,12 +81,12 @@
 
   <p-dialog positions="center" [modal]="true" [(visible)]="odorPanelVisible">
     <ng-template pTemplate>
-      <p-listbox [options]="odors" [(ngModel)]="odor" optionLabel="name" [style]="{ 'width': '15rem', 'font-size': '1.5em', 'font-weight': 'bold' }" (click)="getOdor()"></p-listbox>
+      <p-listbox [options]="odors" [(ngModel)]="odor" optionLabel="name" [style]="{ 'width': '20rem', 'font-size': '1.1em', 'font-weight': 'bold' }" (click)="getOdor()"></p-listbox>
     </ng-template>
   </p-dialog>
 
   <p-dialog positions="center" [style]="{ 'width': '40rem'}" [modal]="true" [(visible)]="strengthPanelVisible">
     <ng-template pTemplate>
-      <p-listbox [options]="strengths" [(ngModel)]="strength" optionLabel="name" [style]="{ 'width': '25rem', 'font-size': '1.5em', 'font-weight': 'bold' }" (click)="getStrength()"></p-listbox>
+      <p-listbox [options]="strengths" [(ngModel)]="strength" optionLabel="name" [style]="{ 'width': '20rem', 'font-size': '1.1em', 'font-weight': 'bold' }" (click)="getStrength()"></p-listbox>
     </ng-template>
   </p-dialog>

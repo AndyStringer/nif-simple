@@ -17,6 +17,29 @@ export const Odors = [
     {name: "Other"}
 ];
 
+export const OdorsList = [
+    {name: "Nutty"},
+    {name: "Grassy"},
+    {name: "Grainy"},
+    {name: "Caramel"},
+    {name: "Burnt"},
+    {name: "Phenolic"},
+    {name: "Woody"},
+    {name: "Fatty"},
+    {name: "Meaty"},
+    {name: "Cooked Veg"},
+    {name: "Stale"},
+    {name: "Sweet"},
+    {name: "Solvent"},
+    {name: "Estery"},
+    {name: "Floral"},
+    {name: "Fruity"},
+    {name: "Sulphurous"},
+    {name: "Citrus"},
+    {name: "Other"}
+];
+
+
 export const Strengths = [
     {name: "Barely Detected", code: 0},
     {name: "Weak", code: 1},
