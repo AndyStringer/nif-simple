@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 65%;
   margin: auto;
 }
 
@@ -48,11 +48,11 @@
   border-collapse: collapse;
   border: 1;
   &-row {
-    width: 100;
+    width: auto;
     text-align: center;
   }
   &-head {
-    width: 110;
+    width: auto;
   }
 }
 

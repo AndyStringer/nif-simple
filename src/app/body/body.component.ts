@@ -75,6 +75,7 @@ export class BodyComponent implements OnInit {
     import('jspdf').then((jsPDF) => {
       import('jspdf-autotable').then((x) => {
         const doc = new jsPDF.default('p');
+        doc.text("GCO Anaysis taken on " + formatDate(this.timerService.injectTime, 'EEEE, MMMM d, y, HH:mm:ss zzzz', this.localID), 105, 10, {align: 'center'});
         (doc as any).autoTable(this.exportColumns, this.timerService.events);
         doc.save(this.fileName + PDF_EXTENSION);
       });
