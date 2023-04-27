@@ -35,6 +35,7 @@ export class BodyComponent implements OnInit {
   odor: string = "";
   strengths: sTemplate[] = [];
   strength: string = "";
+  simple: boolean = true; // Simple mode (true) is without odor profile or strength
 
 
   constructor(
@@ -64,10 +65,10 @@ export class BodyComponent implements OnInit {
         break;
       case this.state.stop:
         this.timerService.stop = new Date().getTime();
-        this.odorPanelVisible = true;
+        this.timerService.duration = this.timerService.stop - this.timerService.start;
+        if (!this.simple) {this.odorPanelVisible = true;} else {this.timerService.pushEvent();}
         this.timerService.buttonText = 'Start';
         this.timerService.buttonPress = this.state.start;
-        this.timerService.duration = this.timerService.stop - this.timerService.start;
         break;
     }
   }
@@ -117,7 +118,7 @@ export class BodyComponent implements OnInit {
 //    this.timerService.events[this.timerService.events.length - 1].odor =  this.timerService.selectedOdor;
     this.odorPanelVisible = false;  // turn off Odor selection modal
     this.strengthPanelVisible = true;  // turn on Strength selection modal
-    this.strengthPanelVisible = true; // turn on Strength selection modal
+//    this.strengthPanelVisible = true; // turn on Strength selection modal
 //    console.log( this.timerService.selectedOdor );
   }
 

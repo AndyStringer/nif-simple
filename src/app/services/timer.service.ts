@@ -14,8 +14,8 @@ export class TimerService {
   injectTime: any = null;
   start: any = null;
   stop: any = null;
-  selectedOdor: string = '';
-  selectedStrength: string = '';
+  selectedOdor: string = 'N/A';
+  selectedStrength: string = 'N/A';
   valueFromO: boolean = true;
   duration: number = 0;
 
