@@ -15,7 +15,7 @@ At the time the sample is injected into the GC-O, this button should be pressed.
 When an odor is detected by the user, then Start is pressed.  This logs the time from injection that the odor starts to appear.  The button state changes to "Stop".
 When the odor can no longer be detected by the user, then "Stop" is pressed.  This records the end time of odor detection.  The button state returns to "Start".
 
-After "Stop" has been pressed, the user is presented with a list of odor descriptors to choose from. After this selection is made, the user is presented with a further dialog-box to select the strength of the odor.
+Optionally (if 'simple' flag is unset), after "Stop" has been pressed, the user is presented with a list of odor descriptors to choose from. After this selection is made, the user is presented with a further dialog-box to select the strength of the odor.
 
 The data of the event is logged in the table below the button.  Odor Descriptor, Intensity, Start Time (minutes), End Time (minutes) and Duration (minutes) are recorded.
 
