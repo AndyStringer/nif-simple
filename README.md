@@ -24,6 +24,6 @@ Each time a new odor is detected the Start/Stop sequence above is actioned.
 At the end of the session, when all odors have been detected, the data can be exported as CSV, XLSX, or PDF. Click on the appropriate icon at the top of the table.
 The filename of the data export is made up of the date/time of injection for uniqueness and as a record of the date/time.
 
-Use in measuring NIF (Nasal Impact Frequency) and SNIF (Surface of Nasal Impact Frequency). See "Hyphenated Headspace-Gas Chromatography-Sniffing Technique:  Screening of Impact Odorants and Quantitative Aromagram Comparisons", Pollien p, et al, Journal of Agricultural and Food Chemistry 1997 45 (7), 2630-2637, DOI: [10.1021/jf960885r](https://sci-hub.se/10.1021/jf960885r)
+Use in measuring NIF (Nasal Impact Frequency) and SNIF (Surface of Nasal Impact Frequency). See "Hyphenated Headspace-Gas Chromatography-Sniffing Technique:  Screening of Impact Odorants and Quantitative Aromagram Comparisons", Pollien p, et al, Journal of Agricultural and Food Chemistry 1997 45 (7), 2630-2637, DOI: [10.1021/jf960885r](https://sci-hub.st/10.1021/jf960885r)
 
 The project was initiated to help [Aidan F Kirkwood](https://twitter.com/aidanolide) at Nottingham University with his PhD research.
